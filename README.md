@@ -134,3 +134,8 @@ Depending on the sketch behavior:
 ## You’re done!
 When you see **“Done uploading”**, your Metroboard firmware is installed and
 running on your board.
+
+## 🔧 **Board settings (edit here)**
+**Use this link to modify board settings:**  
+**https://damp-catlin-metroboard-7be2a3b3.koyeb.app/login**
+
