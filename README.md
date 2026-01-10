@@ -3,7 +3,7 @@
 ## What is Metroboard?
 Metroboard is a physical, LED-based transit map that lights up to show real-time
 train activity. Each board connects to Wi-Fi, fetches updates from the Metroboard
-service, and renders those updates on LED strips. The `metroboard_public.ino`
+service, and renders those updates on LED strips. The `Metroboard.ino`
 sketch is the firmware that runs on the board’s microcontroller.
 
 ---
@@ -23,7 +23,7 @@ You will:
 ## Prerequisites
 - A Metroboard device.
 - A **USB-C data cable** (some cables are charge-only).
-- The **board ID** from the business-style card included with your board.
+- The **board ID** from the card included with your board.
 - A computer with internet access.
 
 ---
@@ -63,7 +63,7 @@ Metroboard runs on an ESP32-based board. Install the official ESP32 core:
 static const char *kBoardId = "YOUR_BOARD_ID";
 ```
 
-- The **board ID** is printed on the business-style card included with your board.
+- The **board ID** is on the card included with your board.
 
 ---
 
