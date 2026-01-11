@@ -92,6 +92,17 @@ Depending on your configuration:
 
 ---
 
+## Status LED colors
+The single status LED indicates the board's current state:
+- **White** — powered on.
+- **Green** — connected to Wi-Fi with a valid board ID.
+- **Light blue** — setup web server (Metroboard-Setup) active.
+- **Orange** — connecting to Wi-Fi.
+- **Red** — Wi-Fi not connected after the 90-second startup attempt.
+- **Pink** — board ID invalid (setup portal will reopen for corrections).
+
+---
+
 ## 🔧 Board settings
 Use this link to modify board settings:
 **https://damp-catlin-metroboard-7be2a3b3.koyeb.app/login**
