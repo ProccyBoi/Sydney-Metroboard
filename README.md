@@ -68,8 +68,7 @@ static const char *kBoardId = "YOUR_BOARD_ID";
 ---
 
 ## Step 5: Select the Correct Board and Port
-1. Go to **Tools → Board** and choose the ESP32 board that matches your hardware.
-   - If you are unsure, use the board name provided with your Metroboard kit.
+1. Go to **Tools → Board** and choose the **ESP32 Dev Module**.
 2. Go to **Tools → Port** and select the port for your connected board.
    - Windows: COM ports (e.g., COM3)
    - macOS/Linux: `/dev/tty.*` or `/dev/ttyUSB*`
