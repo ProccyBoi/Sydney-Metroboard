@@ -1,141 +1,91 @@
-# Metroboard Arduino Sketch Upload Guide
+# Metroboard Quickstart Guide
 
 ## What is Metroboard?
 Metroboard is a physical, LED-based transit map that lights up to show real-time
 train activity. Each board connects to Wi-Fi, fetches updates from the Metroboard
-service, and renders those updates on LED strips. The `Metroboard.ino`
-sketch is the firmware that runs on the board’s microcontroller.
+service, and renders those updates on LED strips. The firmware is preloaded on
+your board, so no upload is required.
 
 ---
 
 ## Overview
 You will:
-1. Install the Arduino IDE.
-2. Install the ESP32 board support.
-3. Connect and power your board via USB-C.
-4. Open the Metroboard sketch and enter your Wi-Fi + board ID.
-5. Install the required libraries.
-6. Verify (compile) the sketch.
-7. Upload to the board.
+1. Plug in and power the board.
+2. Connect to the Metroboard setup Wi-Fi.
+3. Open the setup page.
+4. Enter your Wi-Fi details and board ID.
+5. Let the board reboot and connect.
 
 ---
 
 ## Prerequisites
 - A Metroboard device.
-- A **USB-C data cable** (some cables are charge-only).
+- A **USB-C power source** (wall adapter, power bank, or computer USB port).
 - The **board ID** from the card included with your board.
-- A computer with internet access.
+- A phone or computer with Wi-Fi.
 
 ---
 
-## Step 1: Install the Arduino IDE
-1. Download and install the Arduino IDE from:
-   - https://www.arduino.cc/en/software
-2. Launch the Arduino IDE.
+## Step 1: Plug In and Power the Board
+1. Plug your Metroboard into power using **USB-C**.
+2. Wait about 10–20 seconds for it to boot.
 
 ---
 
-## Step 2: Install ESP32 Board Support
-Metroboard runs on an ESP32-based board. Install the official ESP32 core:
-1. In the Arduino IDE, go to **File → Preferences**.
-2. In **Additional Boards Manager URLs**, add:
-   - https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
-3. Click **OK**.
-4. Go to **Tools → Board → Boards Manager…**
-5. Search for **ESP32** and install **“esp32 by Espressif Systems”**.
+## Step 2: Connect to the Setup Wi-Fi
+On first boot (or if Wi-Fi fails), the board creates its own setup network:
+
+1. On your phone/laptop, join the Wi-Fi network:
+   - **`Metroboard-Setup-<hex>`**
 
 ---
 
-## Step 3: Connect and Power the Board
-1. Plug your Metroboard into your computer using **USB-C**.
-2. Wait for your OS to finish installing drivers (first-time only).
+## Step 3: Open the Setup Page
+1. Open a browser and go to:
+   - **http://192.168.4.1**
+2. You should see the Metroboard setup form.
 
 ---
 
-## Step 4: Open the Sketch and Enter Your Board ID
-1. In the Arduino IDE, go to **File → Open…**
-2. Select `metroboard_public.ino`.
-3. At the top of the file, fill in your Wi-Fi credentials and **board ID**:
+## Step 4: Enter Your Details
+Fill in:
+- **Wi-Fi SSID**
+- **Wi-Fi Password**
+- **Board ID** (from your card)
 
-```cpp
-#define WIFI_SSID "YOUR_WIFI_SSID"
-#define WIFI_PASS "YOUR_WIFI_PASSWORD"
-static const char *kBoardId = "YOUR_BOARD_ID";
-```
-
-- The **board ID** is on the card included with your board.
+Then click **Save & Restart**.
 
 ---
 
-## Step 5: Select the Correct Board and Port
-1. Go to **Tools → Board** and choose the **ESP32 Dev Module**.
-2. Go to **Tools → Port** and select the port for your connected board.
-   - Windows: COM ports (e.g., COM3)
-   - macOS/Linux: `/dev/tty.*` or `/dev/ttyUSB*`
+## Step 5: Wait for the Board to Reboot
+After saving, the board will reboot, join your Wi-Fi, and remember your settings
+after power cycles.
 
 ---
 
-## Step 6: Install Required Libraries
-The sketch depends on **two external libraries** you must install:
-
-1. **Adafruit NeoPixel**
-2. **ArduinoJson**
-
-To install them:
-1. Go to **Sketch → Include Library → Manage Libraries…**
-2. Search for **Adafruit NeoPixel** and click **Install**.
-3. Search for **ArduinoJson** and click **Install**.
-
-> Note: `WiFi.h`, `HTTPClient.h`, and `WiFiClientSecure.h` are provided by the
-> ESP32 board package you installed in Step 2.
-
----
-
-## Step 7: Verify (Compile) the Sketch
-1. Click the **checkmark** icon (Verify) in the toolbar.
-2. Wait for **“Done compiling”**.
-3. If you see errors, read the **first** error line carefully—it usually indicates
-   the real issue (missing library, wrong board, etc.).
-
----
-
-## Step 8: Upload the Sketch
-1. Click the **right-arrow** icon (Upload).
-2. Wait for **“Done uploading”**.
-3. The board will reset and begin running the sketch.
-
----
-
-## Step 9: Confirm It’s Running
-Depending on the sketch behavior:
+## Confirm It’s Running
+Depending on your configuration:
 - LEDs should light or animate.
-- You may see output in **Tools → Serial Monitor** (if enabled in the sketch).
+- You may see output in the Serial Monitor (not required for normal use).
 
 ---
 
 ## Troubleshooting
-**Upload failed / “Failed to connect”**
-- Ensure the correct board and port are selected.
-- Try a different USB-C cable or port.
-- Press the **BOOT** button on the board right as upload starts (some ESP32 boards
-  require this).
-- Ensure the upload baud rate is not too fast, 115200 works well.
+**Can’t find the setup Wi-Fi**
+- Power-cycle the board and wait 10–20 seconds.
+- Ensure you’re within Wi-Fi range.
 
-**No serial port appears**
-- Unplug/replug the board.
-- Try another USB-C cable.
-- Install USB/serial drivers if your board requires them.
+**Setup page won’t load**
+- Confirm you’re connected to **Metroboard-Setup-<hex>** (not your home Wi-Fi).
+- Use **http://192.168.4.1** (not HTTPS).
+- Try a different browser.
 
-**Missing library errors**
-- Re-check Step 6 and install the named libraries via Library Manager.
+**Board won’t connect after saving**
+- Double-check the SSID and password.
+- Reboot the board to re-open the setup portal and try again.
 
 ---
 
-## You’re done!
-When you see **“Done uploading”**, your Metroboard firmware is installed and
-running on your board.
-
-## 🔧 **Board settings (edit here)**
-**Use this link to modify board settings:**  
+## 🔧 Board settings (edit here)
+Use this link to modify board settings:
 **https://damp-catlin-metroboard-7be2a3b3.koyeb.app/login**
-
