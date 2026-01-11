@@ -119,6 +119,7 @@ Depending on the sketch behavior:
 - Try a different USB-C cable or port.
 - Press the **BOOT** button on the board right as upload starts (some ESP32 boards
   require this).
+- Ensure the upload baud rate is not too fast, 115200 works well.
 
 **No serial port appears**
 - Unplug/replug the board.
