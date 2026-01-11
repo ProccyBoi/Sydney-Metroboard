@@ -18,7 +18,7 @@ Use this link to modify board settings:
 You will:
 1. Plug in and power the board.
 2. Connect to the Metroboard setup Wi-Fi.
-3. Open the setup page.
+3. Open the setup page (only if it doesn’t open automatically).
 4. Enter your Wi-Fi details and board ID.
 5. Let the board reboot and connect.
 
@@ -47,9 +47,12 @@ On first boot (or if Wi-Fi fails), the board creates its own setup network:
 ---
 
 ## Step 3: Open the Setup Page
-1. Open a browser on the device connected to the **`Metroboard-Setup-<hex>`** Wi-Fi network and go to:
-   - **http://192.168.4.1**
-2. You should see the Metroboard setup form.
+- In most cases, your device will show a **captive portal page automatically** after
+  connecting to the setup Wi-Fi.
+- **Only if the page does not open automatically**, open a browser and go to:
+  - **http://192.168.4.1**
+
+You should see the Metroboard setup form.
 
 ---
 
@@ -78,17 +81,17 @@ Depending on your configuration:
 
 ## Troubleshooting
 **Can’t find the setup Wi-Fi**
-- Power-cycle the board and wait 10–20 seconds.
+- Unplug the board, wait 5 seconds, and plug it back in.
 - Ensure you’re within Wi-Fi range.
 
 **Setup page won’t load**
 - Confirm you’re connected to **Metroboard-Setup-<hex>** (not your home Wi-Fi).
-- Use **http://192.168.4.1** (not HTTPS).
+- If the captive page didn’t open, use **http://192.168.4.1** (not HTTPS).
 - Try a different browser.
 
 **Board won’t connect after saving**
 - Double-check the SSID and password.
-- Reboot the board to re-open the setup portal and try again.
+- Unplug the board, wait 5 seconds, and plug it back in to re-open the setup portal and try again.
 
 ---
 
