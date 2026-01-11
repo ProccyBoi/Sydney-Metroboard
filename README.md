@@ -8,6 +8,12 @@ your board, so no upload is required.
 
 ---
 
+## 🔧 Board settings
+Use this link to modify board settings:
+**https://damp-catlin-metroboard-7be2a3b3.koyeb.app/login**
+
+---
+
 ## Overview
 You will:
 1. Plug in and power the board.
@@ -41,7 +47,7 @@ On first boot (or if Wi-Fi fails), the board creates its own setup network:
 ---
 
 ## Step 3: Open the Setup Page
-1. Open a browser and go to:
+1. Open a browser on the device connected to the **`Metroboard-Setup-<hex>`** Wi-Fi network and go to:
    - **http://192.168.4.1**
 2. You should see the Metroboard setup form.
 
@@ -86,6 +92,6 @@ Depending on your configuration:
 
 ---
 
-## 🔧 Board settings (edit here)
+## 🔧 Board settings
 Use this link to modify board settings:
 **https://damp-catlin-metroboard-7be2a3b3.koyeb.app/login**
